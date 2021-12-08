@@ -14,6 +14,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Dofawa_Inventory;
 using Dofawa_Camera;
 using Dofawa_SceneManager;
+using Dofawa_MenuStart;
 
 namespace Dofawa_SceneActions
 {
@@ -79,7 +80,7 @@ namespace Dofawa_SceneActions
             }
             else if (scene.name == "Menu")
             {
-
+                MenuStart.MenuFunc.Draw();
             }
         }
         /// <summary>
@@ -116,6 +117,10 @@ namespace Dofawa_SceneActions
             else if (scene.name == "SkillTree")
             {
                 Dofawa_Chars.Singleton.Instance.players[0].skillTree.Update(SceneFunctions.GetSceneByName("SkillTree").screenMouseActions.camera,Dofawa_Chars.Singleton.Instance.players[0].level);
+            }
+            else if (scene.name == "Menu")
+            {
+                MenuStart.MenuFunc.Update();
             }
             Dofawa_Chars.Singleton.Instance.players[0].level.VerifyLevel();
             scene.screenMouseActions.Update();

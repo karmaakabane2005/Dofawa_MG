@@ -84,7 +84,7 @@ namespace Dofawa_SceneManager
     public class SceneVars
     {
         public List<SceneManager> sceneManagers = new List<SceneManager>();
-        public int currentSceneId = 0;
+        public int currentSceneId = /*SceneFunctions.GetSceneByName("Menu").id*/0;
     }
     /// <summary>
     /// Donne l'instance des super globales des scènes

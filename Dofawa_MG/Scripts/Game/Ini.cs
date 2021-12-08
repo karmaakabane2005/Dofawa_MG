@@ -26,6 +26,7 @@ using Dofawa_AllPlayerPB;
 using Dofawa_FightMapItem;
 using Dofawa_SkillTree;
 using Dofawa_SkillTreeComponent;
+using Dofawa_MenuStart;
 
 namespace Dofawa_Ini
 {
@@ -39,6 +40,10 @@ namespace Dofawa_Ini
         /// </summary>
         public static void InitializeVariables()
         {
+
+
+
+
             // Crée la scène manager jeu
             new SceneManager("Game", new ScreenMouseActions(
                 new MouseDragState(Vector2.Zero),
@@ -61,8 +66,17 @@ namespace Dofawa_Ini
             // Crée la scène manager Arbre de compétence
             new SceneManager("SkillTree", new ScreenMouseActions(
                 new MouseDragState(Vector2.Zero),
-                new Camera(SettingsFunctions.GetCenterOfScreen(),0.05f, new Vector2(0.1f,4),true),
+                new Camera(SettingsFunctions.GetCenterOfScreen(), 0.05f, new Vector2(0.1f, 4), true),
                 true));
+            new SceneManager("Menu", new ScreenMouseActions(
+                new MouseDragState(Vector2.Zero),
+                new Camera(SettingsFunctions.GetCenterOfScreen(), 0.05f, new Vector2(0.1f, 4))));
+
+            //on set la scene a Menu
+            Dofawa_SceneManager.Singleton.Instance.currentSceneId = SceneFunctions.GetSceneByName("Menu").id;
+
+
+
             InventoryIni();
             // Crée le joueur
             Chars.PlayerIni(new Chars.Player(
@@ -87,6 +101,7 @@ namespace Dofawa_Ini
 
             // Ini SkillComponent
             SkillTreeComponentIni();
+            Dofawa_MenuStart.MenuStart.MenuFunc.StartIni();
         }
         /// <summary>
         /// Charge les images
