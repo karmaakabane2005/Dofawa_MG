@@ -77,6 +77,10 @@ namespace Dofawa_SceneActions
             {
                 Dofawa_Chars.Singleton.Instance.players[0].skillTree.Draw(Dofawa_Fonts.Singleton.Instance.fonts[4], font, _spriteBatch, graphicsDeviceManager ,scene.screenMouseActions.camera);
             }
+            else if (scene.name == "Menu")
+            {
+
+            }
         }
         /// <summary>
         /// Update le jeu sous une scène et des fonctions multi-scènes.
