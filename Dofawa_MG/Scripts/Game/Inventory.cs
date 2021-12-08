@@ -144,10 +144,10 @@ namespace Dofawa_Inventory
                 Forms.DrawRectangle(new Rectangle(new Point((int)SettingsFunctions.GetCenterOfScreen().X, (int)SettingsFunctions.GetCenterOfScreen().Y), new Point((int)Singleton.Instance.tailleInterface.X+50, (int)Singleton.Instance.tailleInterface.Y + 150)), new Color(28, 26, 26), _graphics, _spritebatch, Dofawa_Draw.Alignment.Center);
                 foreach (ItemButton itemButton in Dofawa_Inventory.Singleton.Instance.inventoryButton)
                 {
+                    Point posPointItemRect = new Point((int)SettingsFunctions.GetCenterOfScreen().X - ((int)Singleton.Instance.tailleInterface.X / 2), (int)(SettingsFunctions.GetCenterOfScreen().Y - ((int)Singleton.Instance.tailleInterface.Y / 2)));
                     Button btn = itemButton.button;
                     Inventory.Items item = itemButton.item;
                     bool isEquip = Dofawa_Chars.Singleton.Instance.players[0].equipement.isEquip(item);
-                    Point posPointItemRect = new Point((int)SettingsFunctions.GetCenterOfScreen().X - ((int)Singleton.Instance.tailleInterface.X / 2), (int)(SettingsFunctions.GetCenterOfScreen().Y / 2 + 10));
                     if (isEquip)
                     {
                         posPointItemRect.Y = posPointItemRect.Y + (20 * nItemEquip);
@@ -171,11 +171,11 @@ namespace Dofawa_Inventory
                     Forms.DrawRectangle(new Rectangle(new Point((int)SettingsFunctions.GetCenterOfScreen().X + 2, (int)SettingsFunctions.GetCenterOfScreen().Y), new Point((int)Singleton.Instance.tailleInterface.X / 2 - 4+25, (int)Singleton.Instance.tailleInterface.Y - 4 + 150)), Color.Gray, _graphics, _spritebatch, Dofawa_Draw.Alignment.CenterLeft);
                     _spritebatch.DrawString(font, Dofawa_Inventory.Singleton.Instance.UiToDraw.nameItem, new Vector2((int)SettingsFunctions.GetCenterOfScreen().X + 2 + ((((int)Singleton.Instance.tailleInterface.X / 2 - 4+25) - Dofawa_Inventory.Singleton.Instance.mesureTXT.X) / 2), (int)SettingsFunctions.GetCenterOfScreen().Y - (((int)
                   Singleton.Instance.tailleInterface.Y - 4) / 2)), Color.Black);
-                    _spritebatch.DrawString(font, "lvl : " + Dofawa_Inventory.Singleton.Instance.UiToDraw.level, new Vector2(700, 220), Dofawa_Inventory.Singleton.Instance.UiToDraw.level <= Dofawa_Chars.Singleton.Instance.players[0].level.level ? Color.Black : Color.Red);
-                    _spritebatch.DrawString(font, "atk : " + Dofawa_Inventory.Singleton.Instance.UiToDraw.stats.atk, new Vector2(700, 250), Color.Black);
-                    _spritebatch.DrawString(font, "pv  : " + Dofawa_Inventory.Singleton.Instance.UiToDraw.stats.pv, new Vector2(700, 270), Color.Black);
-                    _spritebatch.DrawString(font, "pa  : " + Dofawa_Inventory.Singleton.Instance.UiToDraw.stats.pa, new Vector2(700, 290), Color.Black);
-                    _spritebatch.DrawString(font, "pm : " + Dofawa_Inventory.Singleton.Instance.UiToDraw.stats.pm, new Vector2(700, 310), Color.Black);
+                    _spritebatch.DrawString(font, "lvl : " + Dofawa_Inventory.Singleton.Instance.UiToDraw.level, new Vector2(SettingsFunctions.GetCenterOfScreen().X + 100, SettingsFunctions.GetCenterOfScreen().Y - 140), Dofawa_Inventory.Singleton.Instance.UiToDraw.level <= Dofawa_Chars.Singleton.Instance.players[0].level.level ? Color.Black : Color.Red);
+                    _spritebatch.DrawString(font, "atk : " + Dofawa_Inventory.Singleton.Instance.UiToDraw.stats.atk, new Vector2(SettingsFunctions.GetCenterOfScreen().X +100,SettingsFunctions.GetCenterOfScreen().Y -100), Color.Black);
+                    _spritebatch.DrawString(font, "pv  : " + Dofawa_Inventory.Singleton.Instance.UiToDraw.stats.pv, new Vector2(SettingsFunctions.GetCenterOfScreen().X + 100, SettingsFunctions.GetCenterOfScreen().Y - 80), Color.Black);
+                    _spritebatch.DrawString(font, "pa  : " + Dofawa_Inventory.Singleton.Instance.UiToDraw.stats.pa, new Vector2(SettingsFunctions.GetCenterOfScreen().X + 100, SettingsFunctions.GetCenterOfScreen().Y - 60), Color.Black);
+                    _spritebatch.DrawString(font, "pm : " + Dofawa_Inventory.Singleton.Instance.UiToDraw.stats.pm, new Vector2(SettingsFunctions.GetCenterOfScreen().X + 100, SettingsFunctions.GetCenterOfScreen().Y - 40), Color.Black);
                     Dofawa_Inventory.Singleton.Instance.ItemEquiped.Draw(_spritebatch);
                 }
             }

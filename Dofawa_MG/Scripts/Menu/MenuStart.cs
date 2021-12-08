@@ -10,8 +10,8 @@ namespace Dofawa_MenuStart
         {
             public static void StartIni()
             {
-                Dofawa_Settings.Singleton.Instance.PreferredBackBufferHeight = 1080;
-                Dofawa_Settings.Singleton.Instance.PreferredBackBufferWidth = 1920;
+                //Dofawa_Settings.Singleton.Instance.PreferredBackBufferHeight = 1080;
+                //Dofawa_Settings.Singleton.Instance.PreferredBackBufferWidth = 1920;
                 StartGame();
 
             }
