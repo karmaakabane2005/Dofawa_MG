@@ -42,8 +42,8 @@ namespace Dofawa_Settings
     /// </summary>
     public class Settings
     {
-        public int PreferredBackBufferHeight = 1080;
-        public int PreferredBackBufferWidth = 1920;
+        public int PreferredBackBufferHeight = 540;
+        public int PreferredBackBufferWidth = 960;
         public MoveSettings moveSettings = new MoveSettings();
     }
     /// <summary>
